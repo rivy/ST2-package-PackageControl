@@ -9,8 +9,17 @@ The plugin uses a channel and repository system to allow users to find new
 packages over time without any work. It also supports working with packages that
 were manually installed.
 
-Please see http://wbond.net/sublime_packages/package_control for install
-instructions, screenshots and documentation.
+== Installation
+
+Installation is through the Sublime Text 2 console. This is accessed via the ctrl+` shortcut. Once open, paste the following command into the console:
+
+{{{
+import urllib2,os; pf='Package Control (rivy).sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://github.com/rivy/ST2.pack.PackageControl/zipball/master'.replace(' ','%20')).read()); print 'Please restart Sublime Text to finish installation'
+}}}
+
+This command creates the Installed Packages folder for you (if necessary), and then downloads the Package Control.sublime-package into it.
+
+For futher documentation and screenshots, see http://wbond.net/sublime_packages/package_control.
 
 == License
 
